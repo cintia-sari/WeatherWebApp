@@ -1,9 +1,18 @@
-*{
-    background-image: url(./picture/pexels-gradienta-6985184\ \(1\).jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    height: 100%;
-    
+
+    body {
+        background-image: linear-gradient(to left top, #33def3, #00bfea, #00a0dd, #0080ca, #005fb1, #1f56af, #334dab, #4342a5, #644db9, #8559cc, #a664df, #c76ff0);
+        min-width: 320px;
+      }
+
+main{
+    margin:30px;
+    width: 300px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.323);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.9px);
+    -webkit-backdrop-filter: blur(9.9px);
+    border: 0.3px solid rgba(255, 255, 255, 0.33);
+
 }
