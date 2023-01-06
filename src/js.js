@@ -4,8 +4,12 @@ const temp = document.querySelector(".temperature");
 
 form.addEventListener("submit", eventHandler);
 function getApiUrl(city){
-    return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=XHKZYQGTJ2NY7H6SNU8ED55WB&contentType=json`
-}
+    return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=XHKZYQGTJ2NY7H6SNU8ED55WB&contentType=json`;
+};
+
+function renderResponse(weather){
+console.log(weather.address)
+};
 function eventHandler(eventObject){
     eventObject.preventDefault();
     let city = locations.value.trim();
