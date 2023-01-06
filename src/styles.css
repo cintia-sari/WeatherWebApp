@@ -48,6 +48,12 @@ input{
     opacity: 3;
   }
 
+  .button {
+    background-color: #005eb100;
+    border: 0px ;
+    cursor: pointer;
+  }
+
 .picture {
     width: 100px;
     height: 100px;
