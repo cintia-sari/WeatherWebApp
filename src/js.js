@@ -8,12 +8,13 @@ function getApiUrl(city){
     return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=XHKZYQGTJ2NY7H6SNU8ED55WB&contentType=json`;
 };
 
-function renderCelsius(weather){
+function renderWeatherData(weather){
     let celsius = weather.days[0].temp;
     console.log(celsius);
     let html = `
     <div class="temperature">${celsius}°C</div>
-    `;
+    <div class="sky"></div>
+    `;// innen folytani
 return html;
 }
 
@@ -21,7 +22,7 @@ function renderResponse(weather){
 console.log(weather.address)
     let html = "";
     //if(Array.isArray(weather) && weather.length > 0){
-        html = renderCelsius(weather)
+        html = renderWeatherData(weather)
     //} else { // Error részt megcsinálni
     //    html=`<p class='error'>Nem találtunk ilyen nevü várost!</p>`
     //}
