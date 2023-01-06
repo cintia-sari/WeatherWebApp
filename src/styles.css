@@ -9,8 +9,7 @@
     color: var(--main-text-color);
 }
     body {
-        background-image: linear-gradient(to left top, #33def3, #00bfea, #00a0dd, #0080ca, #005fb1, #1f56af, #334dab, #4342a5, #644db9, #8559cc, #a664df, #c76ff0);
-        min-width: 320px;
+        background-image: linear-gradient(to bottom right, #33def3, #00bfea, #00a0dd, #0080ca, #005fb1, #1f56af, #334dab, #4342a5, #644db9, #8559cc, #a664df, #c76ff0);
         display: flex;
         justify-content: center;
       }
@@ -41,6 +40,7 @@ input{
   background: none;
   cursor: pointer;
   border: none;
+  font-size: 15px;
 }
  
 ::placeholder { 
