@@ -64,6 +64,17 @@ input{
     background-color: red;
 }
 
+.mainInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+
+}
+.city {
+    display: flex;
+    justify-content: center;
+}
+
 .temperature {
    font-size: 40px; 
    display: flex;
@@ -71,9 +82,7 @@ input{
 }
 
 .sky {
-    margin: 5px 0;
-    display: flex;
-   justify-content: center;
+  
 }
 
 .maxMin{
