@@ -9,7 +9,7 @@ function getApiUrl(city){
 };
 
 function renderCelsius(weather){
-    let celsius = weather.days[0].temp ;
+    let celsius = weather.currentConditions.temp ;
     let html =`
      <div class="temperature">${celsius}°C</div>
     `;
@@ -24,12 +24,22 @@ function renderSky(weather){
     return html;
 };
 
+function renderMaxMin(weather){
+    let min = weather.days[0].tempmin;
+    let max = weather.days[0].tempmax;
+    let html = `
+    <div class="maxMin" >Min: ${min}° Max: ${max}</div>
+    `;
+    return html;
+}
+
 function renderWeatherData(weather){
     let celsius = weather.days[0].temp;
     console.log(celsius);
     let html = `
     ${renderCelsius(weather)}
     ${renderSky(weather)}
+    ${renderMaxMin(weather)}
     `;
 return html;
 }
