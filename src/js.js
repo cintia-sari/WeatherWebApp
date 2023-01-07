@@ -39,7 +39,19 @@ function renderMaxMin(weather){
     <h4 class="maxMin" >Min: ${min}° Max: ${max}</h4>
     `;
     return html;
-}
+};
+
+/*function renderHourlyTemp(weather){
+    let hourlyTemp = weather.days[0].hours.temp ;
+    let html="";
+    for (let temp of weather.days[0].hours[0].temp){
+         html += `
+            <div class="hourlyTemp">
+            ${temp}
+            </div>
+        `};
+        console.log(html);
+}*/
 
 function renderWeatherData(weather){
     let celsius = weather.days[0].temp;
@@ -51,8 +63,12 @@ function renderWeatherData(weather){
     ${renderSky(weather)}
     ${renderMaxMin(weather)}
     </div>
-    <div class=""></div>
+    <div class="hourlyTemp">
+
+    </div>
     `;
+
+console.log("hourly", weather.days[0].hours[0].temp)
 return html;
 }
 
