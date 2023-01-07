@@ -65,9 +65,6 @@ input{
 }
 
 .temperature {
-    margin: 30px 0 0 0;
-    width: 100px;
-    height: 100px;
    font-size: 40px; 
    display: flex;
    justify-content: center;
@@ -75,9 +72,8 @@ input{
 
 .sky {
     margin: 5px 0;
-    width: 100px;
-    height: 30px;
-    background-color: red; 
+    display: flex;
+   justify-content: center;
 }
 
 .days {
