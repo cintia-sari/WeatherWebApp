@@ -2,7 +2,6 @@ const form = document.querySelector("form");
 const locations = document.querySelector("[name=location]");
 const weatherBox = document.querySelector(".js-weather-info")
 
-
 form.addEventListener("submit", eventHandler);
 function getApiUrl(city){
     return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=XHKZYQGTJ2NY7H6SNU8ED55WB&contentType=json`;
@@ -53,9 +52,16 @@ function renderMaxMin(weather){
         console.log(html);
 }*/
 
+function renderBackground(weather){
+   // let pictureName = weather.days[0].icon;
+                    
+   let background = document.body.style.backgroundImage = "url('../src/picture/clear-day.jpg')";
+   console.log(background) 
+   return background;
+}
+
 function renderWeatherData(weather){
-    let celsius = weather.days[0].temp;
-    console.log(celsius);
+    renderBackground(weather);
     let html = `
     <div class="mainInfo">
     ${renderCity(weather)}
