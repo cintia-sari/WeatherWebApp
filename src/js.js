@@ -53,9 +53,9 @@ function renderMaxMin(weather){
 }*/
 
 function renderBackground(weather){
-   // let pictureName = weather.days[0].icon;
-                    
-   let background = document.body.style.backgroundImage = "url('../src/picture/clear-day.jpg')";
+   let pictureName = weather.days[0].icon;
+    console.log(pictureName)                
+   let background = document.body.style.backgroundImage = `url('../src/picture/${pictureName}.jpg')`;
    console.log(background) 
    return background;
 }
