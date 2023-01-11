@@ -60,9 +60,33 @@ function renderBackground(weather){
    return background;
 }
 
-function hourlyTemp(weather){
+function hours(weather){
+    let hours = weather.days[0].hours[1].datetime.slice(0,1) ;
+    console.log(hours)
+    let hour = "";
+    if (hours.slice(0,1) === "0"){
+        hour = weather.days[0].hours[1].datetime.slice(1,2);
+    } else {
+        hour = weather.days[0].hours[1].datetime.slice(0,2);
+    }
+    console.log(hour)
+    return hour;
+}
 
-    
+function hourlyTemp(weather){
+    let html="";
+    let hour = hours(weather);
+    let icon = weather.days[0].hours[0].icon;
+    let celsius = weather.days[0].hours[0].temp;
+    console.log(icon)
+    html=`
+        <div class="horulyWeather">
+        <h4>${hour}</h4>
+        <img src="../src/icons/${icon}.svg" alt="${icon}" class="icon">
+        <h4>${celsius}°</h4>
+        </div>
+ `
+ return html ;
 };
 function renderWeatherData(weather){
     renderBackground(weather);
@@ -74,11 +98,11 @@ function renderWeatherData(weather){
     ${renderMaxMin(weather)}
     </div>
     <div class="hourlyTemp">
-    ${hourlytemp(weather)}
+    ${hourlyTemp(weather)}
     </div>
     `;
 
-console.log("hourly", weather.days[0].hours[0].temp)
+
 return html;
 }
 
