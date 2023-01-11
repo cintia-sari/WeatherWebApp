@@ -118,3 +118,12 @@ input{
     height: 12px;
 }
 
+.horulyWeatherArea{
+    display: flex;
+    justify-content: center;
+}
+
+.hourlyWeather {
+
+    margin-left: 8px;
+}
