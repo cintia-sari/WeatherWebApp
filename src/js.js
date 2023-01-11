@@ -60,6 +60,10 @@ function renderBackground(weather){
    return background;
 }
 
+function hourlyTemp(weather){
+
+    
+};
 function renderWeatherData(weather){
     renderBackground(weather);
     let html = `
@@ -70,7 +74,7 @@ function renderWeatherData(weather){
     ${renderMaxMin(weather)}
     </div>
     <div class="hourlyTemp">
-
+    ${hourlytemp(weather)}
     </div>
     `;
 
