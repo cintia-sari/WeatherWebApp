@@ -118,8 +118,3 @@ input{
     height: 12px;
 }
 
-.horulyWeatherArea {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}

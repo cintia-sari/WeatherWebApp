@@ -60,14 +60,13 @@ function renderBackground(weather){
    return background;
 }
 
-function hours(weather){
-    let hours = weather.days[0].hours[1].datetime.slice(0,1) ;
-    console.log(hours)
+function hours(houres){
+   
     let hour = "";
-    if (hours.slice(0,1) === "0"){
-        hour = weather.days[0].hours[1].datetime.slice(1,2);
+    if (houres.slice(0,1) === "0"){
+        hour = houres.slice(1,2);
     } else {
-        hour = weather.days[0].hours[1].datetime.slice(0,2);
+        hour =houres.slice(0,2);
     }
     console.log(hour)
     return hour;
@@ -76,8 +75,9 @@ function hours(weather){
 function hourlyTemp(weather){
     let html= `<div class="horulyWeatherArea">`;
     for ( let i = 0 ; i <= 4; i=i+1 ){
-    
-    let hour = hours(weather);
+    let hoursData = weather.days[0].hours[i].datetime;
+    console.log(hoursData)
+    let hour = hours(hoursData);
     let icon = weather.days[0].hours[i].icon;
     let celsius = weather.days[0].hours[i].temp;
 
