@@ -118,7 +118,7 @@ input{
     height: 12px;
 }
 
-.horulyWeather {
+.horulyWeatherArea {
     display: flex;
     align-items: center;
     flex-direction: column;

@@ -74,18 +74,25 @@ function hours(weather){
 }
 
 function hourlyTemp(weather){
-    let html="";
+    let html= `<div class="horulyWeatherArea">`;
+    for ( let i = 0 ; i <= 4; i=i+1 ){
+    
     let hour = hours(weather);
-    let icon = weather.days[0].hours[0].icon;
-    let celsius = weather.days[0].hours[0].temp;
-    console.log(icon)
-    html=`
-        <div class="horulyWeather">
+    let icon = weather.days[0].hours[i].icon;
+    let celsius = weather.days[0].hours[i].temp;
+
+     html += `
+     <div class="hourlyWeather">
         <h4>${hour}</h4>
         <img src="../src/icons/${icon}.svg" alt="${icon}" class="icon">
         <h4>${celsius}°</h4>
-        </div>
- `
+        </div> 
+    `
+        };
+        
+ 
+ html += "</div>"
+ console.log(html);
  return html ;
 };
 function renderWeatherData(weather){
