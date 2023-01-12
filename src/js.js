@@ -89,7 +89,7 @@ function hourlyTemp(weather){
     `
         };
         
-     html += `<span class="material-symbols-outlined arrowL">
+     html += `<span class="material-symbols-outlined row arrowL">
      arrow_forward_ios
      </span>
      </div>
