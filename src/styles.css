@@ -115,6 +115,8 @@ input{
 .hourlyWeatherArea{
 display: flex;
 margin:10px;
+display: flex;
+align-items: center;
 overflow-x: scroll;
 }
 
@@ -137,17 +139,13 @@ width: 60px;
     margin:5px;
 }
 
-.row {
-    display: flex;
-    align-items: center;
-}
 
-.row span{
+.row{
     font-size: 20px;
     transition: 0.2s;
     width: 13px;
 }
 
-.row span:hover{
+.row:hover{
     font-size: 30px;
 }

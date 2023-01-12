@@ -1,6 +1,8 @@
 const form = document.querySelector("form");
 const locations = document.querySelector("[name=location]");
-const weatherBox = document.querySelector(".js-weather-info")
+const weatherBox = document.querySelector(".js-weather-info");
+const arrow = document.querySelector(".arrowR");
+
 
 /*form.addEventListener("submit", eventHandler);
 
@@ -65,7 +67,8 @@ function hourlyTemp(weather){
     let dayInfo = weather.description
     let html= `<div class="dayWeather glassStyle">
                     <div class="dayinfo">${dayInfo}</div>
-                    <div class="hourlyWeatherArea row"><span class="material-symbols-outlined">
+                    <div class="hourlyWeatherArea">
+                    <span class="material-symbols-outlined row arrowR">
                     arrow_back_ios
                     </span>`;
     let hourslength = ((weather.days[0].hours).length)-1;
@@ -86,7 +89,7 @@ function hourlyTemp(weather){
     `
         };
         
-     html += `<span class="material-symbols-outlined row">
+     html += `<span class="material-symbols-outlined arrowL">
      arrow_forward_ios
      </span>
      </div>
