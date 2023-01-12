@@ -2,11 +2,11 @@ const form = document.querySelector("form");
 const locations = document.querySelector("[name=location]");
 const weatherBox = document.querySelector(".js-weather-info")
 
-form.addEventListener("submit", eventHandler);
+/*form.addEventListener("submit", eventHandler);
 
 function getApiUrl(city){
-    //return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=XHKZYQGTJ2NY7H6SNU8ED55WB&contentType=json`;
-};
+    return `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}?unitGroup=metric&key=XHKZYQGTJ2NY7H6SNU8ED55WB&contentType=json`;
+};*/
 
 function renderCity(weather){
     let city= weather.address ;
@@ -54,7 +54,7 @@ function renderMaxMin(weather){
 }*/
 
 function renderBackground(weather){
-   let pictureName = weather.days[0].icon;
+   let pictureName = weather.currentConditions.icon;
     console.log(pictureName)                
    let background = document.body.style.backgroundImage = `url('../src/picture/${pictureName}.jpg')`;
    console.log(background) 
@@ -75,7 +75,9 @@ function hours(houres){
 
 function hourlyTemp(weather){
     let html= `<div class="horulyWeatherArea">`;
-    for ( let i = 0 ; i <= 23; i=i+1 ){
+    let hourslength = ((weather.days[0].hours).length)-1;
+    console.log("hr:"+hourslength)
+    for ( let i = 0 ; i <= hourslength; i=i+1 ){
     let hoursData = weather.days[0].hours[i].datetime;
     console.log(hoursData)
     let hour = hours(hoursData);
@@ -126,17 +128,18 @@ console.log(weather.address)
 };
 
 
-function eventHandler(eventObject){
+
+/*function eventHandler(eventObject){
     eventObject.preventDefault();
     let city = locations.value.trim();
     locations.value ='';
 
-    fetch(getApiUrl(city))
+   fetch(getApiUrl(city))
     .then(data => data.json())
     .then(renderResponse)
-};
+};*/
 
-const data=
+const data=[
 {
     "queryCost": 1,
     "latitude": 47.4997,
@@ -10815,5 +10818,7 @@ const data=
     "sunsetEpoch": 1673536521,
     "moonphase": 0.63
     }
-    }
+    }]
+
+    renderResponse(data[0]);
     
