@@ -63,9 +63,11 @@ function hours(houres){
 
 function hourlyTemp(weather){
     let dayInfo = weather.description
-    let html= `<div class="horulyWeatherArea">
+    let html= `<div class="dayWeather glassStyle">
                     <div class="dayinfo">${dayInfo}</div>
-                    <div class="hourlyWeatherArea">`;
+                    <div class="hourlyWeatherArea row"><span class="material-symbols-outlined">
+                    arrow_back_ios
+                    </span>`;
     let hourslength = ((weather.days[0].hours).length)-1;
 
     for ( let i = 0 ; i <= hourslength; i=i+1 ){
@@ -84,7 +86,11 @@ function hourlyTemp(weather){
     `
         };
         
-     html += "</div></div>"
+     html += `<span class="material-symbols-outlined row">
+     arrow_forward_ios
+     </span>
+     </div>
+     </div>`
     return html ;
 };
 
