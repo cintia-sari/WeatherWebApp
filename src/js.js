@@ -25,7 +25,7 @@ function renderCelsius(weather){
 }
 
 function renderSky(weather){
-    let sky = weather.days[0].description ;
+    let sky = weather.days[0].icon ;
     let html = `
     <h4 class="sky">${sky}</h4>
     `;
@@ -36,7 +36,7 @@ function renderMaxMin(weather){
     let min = weather.days[0].tempmin;
     let max = weather.days[0].tempmax;
     let html = `
-    <h4 class="maxMin" >Min: ${min}° Max: ${max}</h4>
+    <h4 class="maxMin" >Min: ${min}°  Max: ${max}°</h4>
     `;
     return html;
 };

@@ -7,6 +7,7 @@
     font-family: Arial, Helvetica, sans-serif;      
     font-weight: bold;
     color: var(--main-text-color);
+    margin:0;
 }
 
 body {
@@ -39,7 +40,9 @@ main{
 
 
  /*kereső mező*/
-
+.navigation{
+    margin:40px;
+}
 input{
   background: none;
   cursor: pointer;
@@ -63,6 +66,36 @@ input{
     color: var(--main-text-color)
   }
 
+/* napi időjárás rész*/
+
+.mainInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.city{
+    margin:5px;
+    font-size: 30px;
+    font-weight: 80px;
+    text-shadow: 3px 3px 10px #4a4a4a70;;
+}
+
+.temperature{
+    font-size: 50px;
+    font-weight: 80px;
+    text-shadow: 3px 3px 10px #4a4a4a70;
+}
+
+.sky{
+    margin:10px;
+    text-shadow: 3px 3px 10px #4a4a4a70; 
+}
+
+.maxMin{
+    margin:10px;
+    text-shadow: 3px 3px 10px #4a4a4a70; 
+}
 
 
 .icon {
