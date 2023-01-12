@@ -41,23 +41,11 @@ function renderMaxMin(weather){
     return html;
 };
 
-/*function renderHourlyTemp(weather){
-    let hourlyTemp = weather.days[0].hours.temp ;
-    let html="";
-    for (let temp of weather.days[0].hours[0].temp){
-         html += `
-            <div class="hourlyTemp">
-            ${temp}
-            </div>
-        `};
-        console.log(html);
-}*/
+
 
 function renderBackground(weather){
-   let pictureName = weather.currentConditions.icon;
-    console.log(pictureName)                
+   let pictureName = weather.currentConditions.icon;               
    let background = document.body.style.backgroundImage = `url('../src/picture/${pictureName}.jpg')`;
-   console.log(background) 
    return background;
 }
 
@@ -69,17 +57,17 @@ function hours(houres){
     } else {
         hour =houres.slice(0,2);
     }
-    console.log(hour)
+
     return hour;
 }
 
 function hourlyTemp(weather){
     let html= `<div class="horulyWeatherArea">`;
     let hourslength = ((weather.days[0].hours).length)-1;
-    console.log("hr:"+hourslength)
+
     for ( let i = 0 ; i <= hourslength; i=i+1 ){
+
     let hoursData = weather.days[0].hours[i].datetime;
-    console.log(hoursData)
     let hour = hours(hoursData);
     let icon = weather.days[0].hours[i].icon;
     let celsius = weather.days[0].hours[i].temp;
@@ -93,11 +81,34 @@ function hourlyTemp(weather){
     `
         };
         
- 
- html += "</div>"
- console.log(html);
- return html ;
+     html += "</div>"
+    return html ;
 };
+
+function renderNextdays(weather){
+    let html= `<div class="days">`;
+    let dayslenght = (weather.days.length)-1;
+    
+    for ( let i = 0 ; i <= dayslenght; ++i){
+        let day = weather.days[i].datetime
+        let icon = weather.days[i].icon
+        let minTemp = weather.days[i].tempmin
+        let maxTemp = weather.days[i].tempmax
+
+        html += `
+        <div class="days">
+        <div class="nextDay">${day}</div>
+        <img src="../src/icons/${icon}.svg" alt="${icon}" class="icon">
+        <div class="tempMinMax">${minTemp}°-${maxTemp}°</div>
+        </div>
+        `
+    }
+    html += "</div>"
+    return html ;
+};
+
+
+
 function renderWeatherData(weather){
     renderBackground(weather);
     let html = `
@@ -107,9 +118,10 @@ function renderWeatherData(weather){
     ${renderSky(weather)}
     ${renderMaxMin(weather)}
     </div>
-    <div class="hourlyTemp">
-    ${hourlyTemp(weather)}
-    </div>
+    <div class="hourlyTemp">${hourlyTemp(weather)}</div>
+    <div class="nextDays">${renderNextdays(weather)}<div/>
+    
+</div>
     `;
 
 
@@ -117,7 +129,6 @@ return html;
 }
 
 function renderResponse(weather){
-console.log(weather.address)
     let html = "";
     //if(Array.isArray(weather) && weather.length > 0){
         html = renderWeatherData(weather)
