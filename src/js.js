@@ -62,7 +62,10 @@ function hours(houres){
 }
 
 function hourlyTemp(weather){
-    let html= `<div class="horulyWeatherArea">`;
+    let dayInfo = weather.description
+    let html= `<div class="horulyWeatherArea">
+                    <div class="dayinfo">${dayInfo}</div>
+                    <div class="hourlyWeatherArea">`;
     let hourslength = ((weather.days[0].hours).length)-1;
 
     for ( let i = 0 ; i <= hourslength; i=i+1 ){
@@ -81,7 +84,7 @@ function hourlyTemp(weather){
     `
         };
         
-     html += "</div>"
+     html += "</div></div>"
     return html ;
 };
 
