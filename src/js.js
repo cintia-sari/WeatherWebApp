@@ -179,7 +179,7 @@ function renderResponse(weather){
 };
 
 function error (){
-    weatherBox.innerHTML = "<div>error</div>";
+    weatherBox.innerHTML = "<h3 class='error'>We couldn't find this city!</h3>";
 }
 
 function eventHandler(eventObject){
