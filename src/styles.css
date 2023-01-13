@@ -58,6 +58,7 @@ input{
 
 .input:focus, input:valid, textarea:valid {
     outline: none;
+    background-color: none;
 }
 
   .button {

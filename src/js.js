@@ -179,7 +179,8 @@ function renderResponse(weather){
 };
 
 function error (){
-    weatherBox.innerHTML = "<h3 class='error'>We couldn't find this city!</h3>";
+ weatherBox.innerHTML = "<h3 class='error'>We couldn't find this city!</h3>";
+ 
 }
 
 function eventHandler(eventObject){
@@ -190,4 +191,5 @@ function eventHandler(eventObject){
    fetch(getApiUrl(city))
     .then(data => data.json())
     .then(renderResponse)
-    .catch(error())}
+    .error(error())
+}
