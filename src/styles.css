@@ -25,7 +25,6 @@ main{
     width: 90vw;
     max-width: 900px;
     margin:30px;
-    border: 1px solid red;
 }
 
 /* üveghtaás efect*/
@@ -160,13 +159,11 @@ justify-content: space-between
 
 /*Következő napok időjárás adatai*/
 .hourlyTemp{
-    border: 1px solid red;
     width: 90vw;
     max-width: 900px;
 }
 
 .js-weather-info{
-    border: 1px solid red;
     width: 90vw;
     max-width: 900px;
 }
