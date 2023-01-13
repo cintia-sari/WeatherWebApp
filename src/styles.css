@@ -153,3 +153,39 @@ justify-content: space-between
 .row:hover{
     font-size: 30px;
 }
+
+/*Következő napok időjárás adatai*/
+
+.days  {
+    margin:30px;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.days h4 {
+    margin: 10px;
+    font-size: 13px;
+}
+
+.days h4 span{
+    font-size: 13px;
+}
+
+.day {
+    display: flex;   
+    align-items:center; 
+    justify-content: space-between;
+    margin: 10px;
+    padding: 10px 0 10px 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    border-top: 1px solid var(--main-text-color);
+}
+
+.day .tempMinMax {
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+
+}

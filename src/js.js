@@ -98,8 +98,13 @@ function hourlyTemp(weather){
 };
 
 function renderNextdays(weather){
-    let html= `<div class="days">`;
     let dayslenght = (weather.days.length)-1;
+    let html= `<div class="days glassStyle">
+                    <h4>
+                        <span class="material-symbols-outlined">calendar_month</span>
+                        ${dayslenght} daily forecast
+                    </h4>`;
+    
     
     for ( let i = 0 ; i <= dayslenght; ++i){
         let day = weather.days[i].datetime
@@ -108,10 +113,10 @@ function renderNextdays(weather){
         let maxTemp = weather.days[i].tempmax
 
         html += `
-        <div class="days">
+        <div class="day">
         <div class="nextDay">${day}</div>
         <img src="../src/icons/${icon}.svg" alt="${icon}" class="icon">
-        <div class="tempMinMax">${minTemp}°-${maxTemp}°</div>
+        <div class="tempMinMax"><div>${minTemp}°</div> <div>${maxTemp}°</div></div>
         </div>
         `
     }
