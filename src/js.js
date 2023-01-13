@@ -102,7 +102,7 @@ function hourlyTemp(weather){
 function getDayName(dates){
     let date = new Date(`"${dates}"`);
     let day =weekday[date.getDay()];
-    
+
     return day ;
 }
 
@@ -116,10 +116,17 @@ function renderNextdays(weather){
     
     
     for ( let i = 0 ; i <= dayslenght-1; ++i){
-        let day = getDayName(weather.days[i].datetime);
+        let day = ""
         let icon = weather.days[i].icon
         let minTemp = weather.days[i].tempmin
         let maxTemp = weather.days[i].tempmax
+
+        if ( i  < 1){
+            day = "Today";
+        } else {
+            day = getDayName(weather.days[i].datetime);
+        }
+        console.log ( day)
 
         html += `
         <div class="day">
@@ -128,7 +135,7 @@ function renderNextdays(weather){
         <div class="tempMinMax"><div>${minTemp}°</div> <div>${maxTemp}°</div></div>
         </div>
         `
-      
+
     }
     html += "</div>"
     return html ;
