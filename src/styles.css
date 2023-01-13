@@ -22,9 +22,9 @@ main{
     display: flex;
     align-items: center;
     flex-direction: column;
-    min-width: 300px;
-    max-width: 550px;
+    width: 90vw;
     margin:30px;
+    border: 1px solid red;
 }
 
 /* üveghtaás efect*/
@@ -39,13 +39,17 @@ main{
 }
 
 .error{
-    color: rgb(246, 85, 85)
+    color: rgb(246, 85, 85);
 }
 
 
  /*kereső mező*/
 .navigation{
-    margin:40px;
+    margin:10px;
+    width: 90vw;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
 }
 
 input{
@@ -106,8 +110,6 @@ input{
 /* napi órás előrejelzés*/
 .dayWeather{
     margin:30px;
-    min-width: 300px;
-    max-width: 500px;
 }
 
 .dayinfo{
@@ -157,16 +159,27 @@ justify-content: space-between
 }
 
 /*Következő napok időjárás adatai*/
+.hourlyTemp{
+    border: 1px solid red;
+    width: 90vw;
+}
 
+.js-weather-info{
+    border: 1px solid red;
+    width: 90vw;
+}
+.mainInfo{
+    width: 90vw;
+}
 .days  {
     margin:30px;
-    min-width: 300px;
-    max-width: 500px;
+    mwidth: 90vw;
 }
 
 .days h4 {
     margin: 10px;
     font-size: 13px;
+    width: 90vw;
 }
 
 .days h4 span{
@@ -187,6 +200,7 @@ justify-content: space-between
 
 .day .nextDay{
     width: 60px;
+
 }
 
 .day .tempMinMax {
