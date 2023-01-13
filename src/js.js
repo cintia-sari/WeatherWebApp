@@ -70,7 +70,7 @@ function hourlyTemp(weather){
                     <div class="hourlyWeatherArea">
                     <span class="material-symbols-outlined row arrowR">
                     arrow_back_ios
-                    </span>`;
+                    </span><div class="hourlyWeatherArea">`;
     let hourslength = ((weather.days[0].hours).length)-1;
 
     for ( let i = 0 ; i <= hourslength; i=i+1 ){
@@ -82,14 +82,14 @@ function hourlyTemp(weather){
 
      html += `
      <div class="hourlyWeather">
-        <h4>${hour}</h4>
-        <img src="../src/icons/${icon}.svg" alt="${icon}" class="icon">
-        <h4>${celsius}°</h4>
-        </div> 
+     <h4>${hour}</h4>
+     <img src="../src/icons/${icon}.svg" alt="${icon}" class="icon">
+     <h4>${celsius}°</h4>
+     </div> 
     `
         };
         
-     html += `<span class="material-symbols-outlined row arrowL">
+     html += `</div><span class="material-symbols-outlined row arrowL">
      arrow_forward_ios
      </span>
      </div>
