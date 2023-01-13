@@ -23,6 +23,7 @@ main{
     align-items: center;
     flex-direction: column;
     width: 90vw;
+    max-width: 900px;
     margin:30px;
     border: 1px solid red;
 }
@@ -46,8 +47,6 @@ main{
  /*kereső mező*/
 .navigation{
     margin:10px;
-    width: 90vw;
-    border: 1px solid red;
     display: flex;
     justify-content: space-between;
 }
@@ -57,12 +56,13 @@ input{
   cursor: pointer;
   border: none;
   font-size: 20px;
-  margin:3px
+  margin:3px;
 }
 
 .input:focus, input:valid, textarea:valid {
     outline: none;
     background-color: none;
+    width:250px;
 }
 
   .button {
@@ -162,24 +162,27 @@ justify-content: space-between
 .hourlyTemp{
     border: 1px solid red;
     width: 90vw;
+    max-width: 900px;
 }
 
 .js-weather-info{
     border: 1px solid red;
     width: 90vw;
+    max-width: 900px;
 }
 .mainInfo{
     width: 90vw;
+    max-width: 900px;
 }
 .days  {
     margin:30px;
-    mwidth: 90vw;
 }
 
 .days h4 {
     margin: 10px;
     font-size: 13px;
     width: 90vw;
+    max-width: 900px;
 }
 
 .days h4 span{
