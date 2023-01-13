@@ -3,6 +3,8 @@ const locations = document.querySelector("[name=location]");
 const weatherBox = document.querySelector(".js-weather-info");
 const arrow = document.querySelector(".arrowR");
 
+const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+
 
 /*form.addEventListener("submit", eventHandler);
 
@@ -97,8 +99,15 @@ function hourlyTemp(weather){
     return html ;
 };
 
+function getDayName(dates){
+    let date = new Date(`"${dates}"`);
+    let day =weekday[date.getDay()];
+    
+    return day ;
+}
+
 function renderNextdays(weather){
-    let dayslenght = (weather.days.length)-1;
+    let dayslenght = (weather.days.length)-5;
     let html= `<div class="days glassStyle">
                     <h4>
                         <span class="material-symbols-outlined">calendar_month</span>
@@ -106,8 +115,8 @@ function renderNextdays(weather){
                     </h4>`;
     
     
-    for ( let i = 0 ; i <= dayslenght; ++i){
-        let day = weather.days[i].datetime
+    for ( let i = 0 ; i <= dayslenght-1; ++i){
+        let day = getDayName(weather.days[i].datetime);
         let icon = weather.days[i].icon
         let minTemp = weather.days[i].tempmin
         let maxTemp = weather.days[i].tempmax
@@ -119,6 +128,7 @@ function renderNextdays(weather){
         <div class="tempMinMax"><div>${minTemp}°</div> <div>${maxTemp}°</div></div>
         </div>
         `
+      
     }
     html += "</div>"
     return html ;
