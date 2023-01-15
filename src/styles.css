@@ -8,6 +8,8 @@
     font-weight: bold;
     color: var(--main-text-color);
     margin:0;
+    scroll-behavior: smooth;
+    user-select: NONE;
 }
 
 body {
@@ -115,16 +117,17 @@ input{
     margin:10px;
 }
 
-.hourlyWeatherArea{
-display: flex;
+.hourlyWeatherArea, .hourlyWeatherArea-container{
 margin:5px;
 display: flex;
 align-items: center;
 overflow-x: scroll;
 }
 
-.hourlyWeatherArea::-webkit-scrollbar{
+.hourlyWeatherArea::-webkit-scrollbar
+, .hourlyWeatherArea-container::-webkit-scrollbar{
     display: none;
+
 }
 
 

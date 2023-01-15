@@ -51,7 +51,7 @@ function renderMaxMin(weather){
 
 function renderBackground(weather){
    let pictureName = weather.currentConditions.icon;               
-   let background = document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),url('../src/picture/${pictureName}.jpg')`;
+   let background = document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),url('./src/picture/${pictureName}.jpg')`;
    return background;
 }
 
@@ -71,7 +71,7 @@ function hourlyTemp(weather){
     let dayInfo = weather.description
     let html= `<div class="dayWeather glassStyle">
                     <div class="dayinfo">${dayInfo}</div>
-                    <div class="hourlyWeatherArea">
+                    <div class="hourlyWeatherArea-container">
                     <span class="material-symbols-outlined row arrowL">
                     arrow_back_ios
                     </span><div class="hourlyWeatherArea">`;
@@ -87,7 +87,7 @@ function hourlyTemp(weather){
      html += `
      <div class="hourlyWeather">
      <h4>${hour}</h4>
-     <img src="../src/icons/${icon}.svg" alt="${icon}" class="icon">
+     <img src="./src/icons/${icon}.svg" alt="${icon}" class="icon">
      <h4>${celsius}°</h4>
      </div> 
     `
@@ -128,12 +128,11 @@ function renderNextdays(weather){
         } else {
             day = getDayName(weather.days[i].datetime);
         }
-        console.log ( day)
 
         html += `
         <div class="day">
         <div class="nextDay">${day}</div>
-        <img src="../src/icons/${icon}.svg" alt="${icon}" class="icon">
+        <img src="./src/icons/${icon}.svg" alt="${icon}" class="icon">
         <div class="tempMinMax"><div>${minTemp}°</div> <div>${maxTemp}°</div></div>
         </div>
         `
@@ -169,12 +168,7 @@ return html;
 }
 
 function renderResponse(weather){
-  
-    
-        html = renderWeatherData(weather)
-
-        
-    
+    html = renderWeatherData(weather)
     weatherBox.innerHTML = html;
 };
 
@@ -191,5 +185,19 @@ function eventHandler(eventObject){
    fetch(getApiUrl(city))
     .then(data => data.json())
     .then(renderResponse)
-    .error(error())
+    .then(()=>{
+        const arrowR = document.querySelector(".arrowR");
+        const arrowL = document.querySelector(".arrowL");
+
+        const hourlyWeatherArea = document.querySelector(".hourlyWeatherArea");
+        arrowR.addEventListener('click', ()=>{
+            hourlyWeatherArea.scrollBy(100,0);
+        })
+
+        arrowL.addEventListener("click",()=>{
+        hourlyWeatherArea.scrollBy(-100,0)});
+       
+    })
+    .catch(error)
+
 }
