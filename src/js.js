@@ -142,10 +142,6 @@ function renderNextdays(weather){
     return html ;
 };
 
-function scrollR(){
-    console.log('scrolled...')
-}
-
 function renderWeatherData(weather){
     renderBackground(weather);
     let html = `
