@@ -1,3 +1,4 @@
+/* Basic settings*/
 :root{
     --main-text-color: rgb(248, 249, 250);
     --man-ph-color: rgb(248, 247, 247);
@@ -9,16 +10,19 @@
     color: var(--main-text-color);
     margin:0;
     scroll-behavior: smooth;
-    user-select: NONE;
+    user-select: none;
 }
 
 body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(./picture/clear-day.jpg);
-    background-size: cover;
     display: flex;
     justify-content: center;
     min-height: 100vw;
+
+
 }
+
+
 
 main{
     display: flex;
@@ -40,12 +44,15 @@ main{
 
 }
 
+/* If the search went wrong*/
 .error{
     color: rgb(246, 85, 85);
+    text-align: center;
+    margin-top: 30px;
 }
 
 
- /*kereső mező*/
+ /*Search Input*/
 .navigation{
     margin:10px;
     display: flex;
@@ -77,7 +84,8 @@ input{
     color: var(--main-text-color)
   }
 
-/* napi időjárás rész*/
+
+/* part of daily weather*/
 
 .mainInfo{
     display: flex;
@@ -108,7 +116,7 @@ input{
     text-shadow: 3px 3px 10px #4a4a4a70; 
 }
 
-/* napi órás előrejelzés*/
+/* part of daily hourly weather*/
 .dayWeather{
     margin:30px;
 }
@@ -160,7 +168,7 @@ justify-content: space-between
     font-size: 30px;
 }
 
-/*Következő napok időjárás adatai*/
+/*next days data*/
 .hourlyTemp{
     width: 90vw;
     max-width: 900px;
