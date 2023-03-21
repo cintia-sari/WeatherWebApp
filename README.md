@@ -23,5 +23,5 @@ Instead, the application has 22 different wallpapers and icons, so that the user
 * API : https://www.visualcrossing.com/
 * icons: https://www.flaticon.com/
 * pictures:
- * https://pixabay.com/hu/
- * https://www.pexels.com/hu-hu/ 
+  * https://pixabay.com/hu/
+  * https://www.pexels.com/hu-hu/ 
