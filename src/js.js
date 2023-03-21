@@ -6,8 +6,6 @@ const arrowL = document.querySelector(".arrowL");
 
 const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
 
-
-
 form.addEventListener("submit", eventHandler);
 
 function getApiUrl(city){
@@ -19,22 +17,25 @@ function renderCity(weather){
     let html = `
     <h3 class="city">${city}</h3>
     `;
+    
     return html ;
-}
+};
 
 function renderCelsius(weather){
     let celsius = weather.currentConditions.temp ;
     let html =`
      <h2 class="temperature">${celsius}°C</h2>
     `;
+    
     return html;
-}
+};
 
 function renderSky(weather){
     let sky = weather.currentConditions.icon ;
     let html = `
     <h4 class="sky">${sky}</h4>
     `;
+    
     return html;
 };
 
@@ -44,16 +45,16 @@ function renderMaxMin(weather){
     let html = `
     <h4 class="maxMin" >Min: ${min}°  Max: ${max}°</h4>
     `;
+    
     return html;
 };
-
-
 
 function renderBackground(weather){
    let pictureName = weather.currentConditions.icon;               
    let background = document.body.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.1)),url('./src/picture/${pictureName}.jpg')`;
+   
    return background;
-}
+};
 
 function hours(houres){
    
@@ -62,10 +63,10 @@ function hours(houres){
         hour = houres.slice(1,2);
     } else {
         hour =houres.slice(0,2);
-    }
+    };
 
     return hour;
-}
+};
 
 function hourlyTemp(weather){
     let dayInfo = weather.description
@@ -98,7 +99,8 @@ function hourlyTemp(weather){
      </span>
      </div>
      </div>`
-    return html ;
+    
+     return html ;
 };
 
 function getDayName(dates){
@@ -106,7 +108,7 @@ function getDayName(dates){
     let day =weekday[date.getDay()];
 
     return day ;
-}
+};
 
 function renderNextdays(weather){
     let dayslenght = (weather.days.length)-5;
@@ -116,18 +118,17 @@ function renderNextdays(weather){
                         ${dayslenght} daily forecast
                     </h4>`;
     
-    
     for ( let i = 0 ; i <= dayslenght-1; ++i){
-        let day = ""
-        let icon = weather.days[i].icon
-        let minTemp = weather.days[i].tempmin
-        let maxTemp = weather.days[i].tempmax
+        let day = "";
+        let icon = weather.days[i].icon;
+        let minTemp = weather.days[i].tempmin;
+        let maxTemp = weather.days[i].tempmax;
 
         if ( i  < 1){
             day = "Today";
         } else {
             day = getDayName(weather.days[i].datetime);
-        }
+        };
 
         html += `
         <div class="day">
@@ -137,41 +138,38 @@ function renderNextdays(weather){
         </div>
         `
 
-    }
-    html += "</div>"
+    };
+    html += "</div>";
+    
     return html ;
 };
 
 function renderWeatherData(weather){
     renderBackground(weather);
     let html = `
-    <div class="mainInfo">
-    ${renderCity(weather)}
-    ${renderCelsius(weather)}
-    ${renderSky(weather)}
-    ${renderMaxMin(weather)}
-    </div>
-    <div class="hourlyTemp">${hourlyTemp(weather)}</div>
-    <div class="nextDays">${renderNextdays(weather)}<div/>
-    
-</div>
-    `;
+            <div class="mainInfo">
+            ${renderCity(weather)}
+            ${renderCelsius(weather)}
+            ${renderSky(weather)}
+            ${renderMaxMin(weather)}
+            </div>
+            <div class="hourlyTemp">${hourlyTemp(weather)}</div>
+            <div class="nextDays">${renderNextdays(weather)}<div/>
+            
+            </div>
+        `;
 
-
-return html;
-
-
-}
+    return html;
+};
 
 function renderResponse(weather){
-    html = renderWeatherData(weather)
+    html = renderWeatherData(weather);
     weatherBox.innerHTML = html;
 };
 
 function error (){
  weatherBox.innerHTML = "<h3 class='error'>We couldn't find this city!</h3>";
- 
-}
+};
 
 function eventHandler(eventObject){
     eventObject.preventDefault();
@@ -188,12 +186,11 @@ function eventHandler(eventObject){
         const hourlyWeatherArea = document.querySelector(".hourlyWeatherArea");
         arrowR.addEventListener('click', ()=>{
             hourlyWeatherArea.scrollBy(100,0);
-        })
+        });
 
         arrowL.addEventListener("click",()=>{
         hourlyWeatherArea.scrollBy(-100,0)});
        
     })
     .catch(error)
-
-}
+};
