@@ -12,7 +12,8 @@ I wanted to write an application that could be useful for everyone, of which the
 you can ask for the weather data of almost all cities and villages in the world.
 
 You will find these data:
-* current temperature * sky
+* current temperature
+* show the sky
 * daily minimum - maximum
 *daily hourly breakdown
 * weather data for the next 10 days
