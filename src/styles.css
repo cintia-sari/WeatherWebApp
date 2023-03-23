@@ -17,14 +17,12 @@ body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(./picture/clear-day.jpg);
     display: flex;
     justify-content: center;
-    min-height: 100vw;
-
-
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
 }
 
-
-
-main{
+main {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -132,10 +130,9 @@ align-items: center;
 overflow-x: scroll;
 }
 
-.hourlyWeatherArea::-webkit-scrollbar
-, .hourlyWeatherArea-container::-webkit-scrollbar{
+.hourlyWeatherArea::-webkit-scrollbar, 
+.hourlyWeatherArea-container::-webkit-scrollbar{
     display: none;
-
 }
 
 
@@ -162,6 +159,7 @@ justify-content: space-between
     font-size: 20px;
     transition: 0.2s;
     width: 22px;
+    cursor: pointer;
 }
 
 .row:hover{
