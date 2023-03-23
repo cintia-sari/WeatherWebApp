@@ -1,10 +1,10 @@
 /* Basic settings*/
-:root{
+:root {
     --main-text-color: rgb(248, 249, 250);
     --man-ph-color: rgb(248, 247, 247);
 }
 
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;      
     font-weight: bold;
     color: var(--main-text-color);
@@ -31,33 +31,38 @@ main {
     margin:30px;
 }
 
-/* üveghtaás efect*/
-.glassStyle{
+
+/* glass efect*/
+
+.glassStyle {
     background: rgba(108, 195, 245, 0.252);
     border-radius: 16px;
     box-shadow: 3px 3px 18px #4a4a4a70;
     backdrop-filter: blur(9.9px);
     -webkit-backdrop-filter: blur(9.9px);
     border: 0.3px solid rgba(255, 255, 255, 0.194);
-
 }
 
+
 /* If the search went wrong*/
-.error{
-    color: rgb(246, 85, 85);
+
+.error {
+    color: rgb(249, 1, 1);
     text-align: center;
     margin-top: 30px;
+    font-size: 30px;
 }
 
 
  /*Search Input*/
-.navigation{
+
+.navigation {
     margin:10px;
     display: flex;
     justify-content: space-between;
 }
 
-input{
+input {
   background: none;
   cursor: pointer;
   border: none;
@@ -71,59 +76,57 @@ input{
     width:250px;
 }
 
-  .button {
+.button {
     background-color: #005eb100;
     cursor: pointer;
     border: 0;
     margin: 3px;
-  }
-
-  ::placeholder{
-    color: var(--main-text-color)
-  }
+}
 
 
 /* part of daily weather*/
 
-.mainInfo{
+.mainInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.city{
+.city {
     margin:5px;
     font-size: 30px;
     font-weight: 80px;
     text-shadow: 3px 3px 10px #4a4a4a70;
 }
 
-.temperature{
+.temperature {
     font-size: 50px;
     font-weight: 80px;
     text-shadow: 3px 3px 10px #4a4a4a70;
 }
 
-.sky{
+.sky {
     margin:10px;
     text-shadow: 3px 3px 10px #4a4a4a70; 
 }
 
-.maxMin{
+.maxMin {
     margin:10px;
     text-shadow: 3px 3px 10px #4a4a4a70; 
 }
+
 
 /* part of daily hourly weather*/
-.dayWeather{
+
+.dayWeather {
     margin:30px;
 }
 
-.dayinfo{
+.dayinfo {
     margin:10px;
 }
 
-.hourlyWeatherArea, .hourlyWeatherArea-container{
+.hourlyWeatherArea, .hourlyWeatherArea-container {
 margin:5px;
 display: flex;
 align-items: center;
@@ -131,12 +134,11 @@ overflow-x: scroll;
 }
 
 .hourlyWeatherArea::-webkit-scrollbar, 
-.hourlyWeatherArea-container::-webkit-scrollbar{
+.hourlyWeatherArea-container::-webkit-scrollbar {
     display: none;
 }
 
-
-.hourlyWeather{
+.hourlyWeather {
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -147,40 +149,42 @@ height: 100px;
 justify-content: space-between
 }
 
-
 .icon {
     max-height: 20px;
     width: 30px;
     margin:5px;
 }
 
-
-.row{
+.row {
     font-size: 20px;
     transition: 0.2s;
     width: 22px;
     cursor: pointer;
 }
 
-.row:hover{
+.row:hover {
     font-size: 30px;
 }
 
+
 /*next days data*/
-.hourlyTemp{
+
+.hourlyTemp {
     width: 90vw;
     max-width: 900px;
 }
 
-.js-weather-info{
+.js-weather-info {
     width: 90vw;
     max-width: 900px;
 }
-.mainInfo{
+
+.mainInfo {
     width: 90vw;
     max-width: 900px;
 }
-.days  {
+
+.days {
     margin:30px;
 }
 
@@ -191,7 +195,7 @@ justify-content: space-between
     max-width: 900px;
 }
 
-.days h4 span{
+.days h4 span {
     font-size: 13px;
 }
 
@@ -207,14 +211,12 @@ justify-content: space-between
     border-top: 1px solid var(--main-text-color);
 }
 
-.day .nextDay{
+.day .nextDay {
     width: 60px;
-
 }
 
 .day .tempMinMax {
     display: flex;
     justify-content: space-between;
     width: 100px;
-
 }
