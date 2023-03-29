@@ -8,7 +8,7 @@ https://cintia-sari.github.io/WeatherWebApp/
 
 I wanted to write an application that could be useful for everyone, of which there are few, and with which I could show that I also understand API calls. This is how I chose the weather web application.
 
-## funkcionalitás:
+## functionalization:
 you can ask for the weather data of almost all cities and villages in the world.
 
 You will find these data:
