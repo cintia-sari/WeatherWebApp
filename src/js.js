@@ -137,7 +137,6 @@ function renderNextdays(weather){
         <div class="tempMinMax"><div>${minTemp}°</div> <div>${maxTemp}°</div></div>
         </div>
         `
-
     };
     html += "</div>";
     
@@ -194,3 +193,4 @@ function eventHandler(eventObject){
     })
     .catch(error)
 };
+
